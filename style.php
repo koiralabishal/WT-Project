@@ -1,3 +1,6 @@
+<?php
+header("Content-type: text/css");
+?>
 *{
     margin:0px;
     padding: 0px;
@@ -13,12 +16,12 @@
  }
  .form-box{
     width: 380px;
-    height: 480px;
+    height: 530px;
     position: relative;
     margin: 6% auto;
     background: #fff;
     padding: 5px;
-    overflow: hidden;
+    overflow: hidden; 
  }
  .btn-box{
     width: 220px;
@@ -28,20 +31,19 @@
     border-radius: 30px;
  }
  .toggle-btn{
-    padding: 10px 30px;
-    cursor: pointer;
+    padding: 10px 90px;
     background: transparent;
     border: 0;
     outline: none;
-    position: relative;
+    position:relative;
  }
  #btn{
     position: absolute;
     top: 0;
     left: 0;
-    width: 110px;
+    width: 220px;
     height: 100%;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(  to right, #ff105f, #ffad06);
     border-radius: 30px;
     transition: .5s;
  }
@@ -91,6 +93,7 @@
     color: #777;
     font-size: 12px;
     bottom: 64px;
+    top:216px;
     position: absolute;
  }
   #user-circle{ 
@@ -119,10 +122,30 @@
     top: 150px;
  }
  #register{
-   left: 450px;
+   left: 50px;
    position: absolute;
+   top:180px;
  }
  #login{
    left: 50px;
    position: absolute;
  }
+ p{
+   position:relative;
+   top: 15px;
+   left:14px;
+}
+#login span{
+   position: relative;
+   top:-2px;
+}
+#login p{
+   position:relative;
+   top:20px;
+}
+a{
+   text-decoration:none;
+   position:relative;
+   left:3px;
+   font-weight:bold;
+}

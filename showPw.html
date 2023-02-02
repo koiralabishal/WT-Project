@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" id="pw">
+    <input type="checkbox" name="show" id="show">Show pw
+    <script>
+        // document.getElementById("show").addEventListener("click",()=>{
+            // document.getElementById("pw").type="text";
+        // })
+        
+        document.getElementById("show").addEventListener("click",toggle());
+        document.getElementById("pw").style.visibility="hidden"
+        function toggle(){
+            if(document.getElementById("pw").style.visibility="visible"){
+                document.getElementById("pw").style.visibility="hidden";
+            }
+            else{
+                document.getElementById("pw").style.visibility="visible";
+            }
+        }
+    </script>
+</body>
+</html>
