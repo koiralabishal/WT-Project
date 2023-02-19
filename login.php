@@ -19,14 +19,14 @@
                 <img src="fb.png">
                 <img src="gp.png">
             </div>
-            <form id="login"  action="" method="post" class="input-group">
+            <form id="login"  action="login.php" method="post" class="input-group">
                 <i class="fas fa-user-circle" id="user-circle"></i>
                 <input type="text" class="input-field" placeholder="Username" required><br>
                 <i class="fas fa-lock" id="lock"></i>
                 <input type="password" class="input-field" placeholder="Password" required><br>
                 <input type="checkbox" class="checkbox"><span>Remember me</span><br>
                 <button type="submit" class="submit-btn">Login</button>
-                <p> <p>Don't have an account?<a href="register.php">Register now</a></p>
+                <p>Don't have an account?<a href="register.php">Register now</a></p>
             </form>
         </div>
     </div>

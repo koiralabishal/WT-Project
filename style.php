@@ -2,29 +2,29 @@
 header("Content-type: text/css");
 ?>
 *{
-    margin:0px;
-    padding: 0px;
-    font-family: sans-serif;
+   margin:0px;
+   padding: 0px;
+   font-family: sans-serif;
  }
  .form{
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)),url(banner.jpg);
-    background-position: center;
-    background-size: cover;
-    position: absolute;
+   height: 100%;
+   width: 100%;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)),url(banner.jpg);
+   background-position: center;
+   background-size: cover;
+   position: absolute;
  }
  .form-box{
-    width: 380px;
-    height: 530px;
-    position: relative;
-    margin: 6% auto;
-    background: #fff;
-    padding: 5px;
-    overflow: hidden; 
- }
- .btn-box{
-    width: 220px;
+   width: 380px;
+   height: 580px;
+   position: relative;
+   margin: 6% auto;
+   background: #fff;
+   padding: 5px;
+   overflow: hidden; 
+ } 
+.btn-box{
+   width: 220px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
@@ -36,7 +36,7 @@ header("Content-type: text/css");
     border: 0;
     outline: none;
     position:relative;
- }
+   }
  #btn{
     position: absolute;
     top: 0;
@@ -84,7 +84,7 @@ header("Content-type: text/css");
     background: linear-gradient(to right, #ff105f, #ffad06);
     border: 0;
     outline: none;
-    border-radius: 30px;
+    border-radius: 40px;
  }
  .checkbox{
     margin: 30px 10px 30px 0;
@@ -95,6 +95,9 @@ header("Content-type: text/css");
     bottom: 64px;
     top:216px;
     position: absolute;
+ }
+ #register span{
+   top: 268px;
  }
   #user-circle{ 
     position: absolute;
@@ -109,17 +112,17 @@ header("Content-type: text/css");
  #envelope{
     position: absolute;
     right: 10px;
-    top: 60px;
+    top: 80px;
  }
  #lock2{
     position: absolute;
     right: 10px;
-    top: 105px;
+    top: 145px;
  }
  #lock3{
     position: absolute;
     right: 10px;
-    top: 150px;
+    top: 210px;
  }
  #register{
    left: 50px;
@@ -135,17 +138,46 @@ header("Content-type: text/css");
    top: 15px;
    left:14px;
 }
-#login span{
-   position: relative;
-   top:-2px;
-}
 #login p{
-   position:relative;
-   top:20px;
+   top:40px;
+}
+#login span{
+   position: absolute;
+   top: 122px;
 }
 a{
    text-decoration:none;
    position:relative;
    left:3px;
    font-weight:bold;
+}
+.errmsg{
+   color:red;
+   position:absolute;
+   font-size:13px;
+}
+
+#errmsg_user{
+   top:45px;
+}
+#errmsg_email{
+   top:110px;
+}
+#errmsg_pw{
+   top: 175px;
+}
+#errmsg_rePw{
+   top:240px;
+}
+   <!-- top: 160px; -->
+   <!-- left: 50px; -->
+   <!-- margin: 5px auto; -->
+   <!-- border-radius: 5px; -->
+   <!-- border: 1px solid red; -->
+   <!-- background: pink; -->
+   <!-- padding: 2px; -->
+   <!-- text-align: left; -->
+   <!-- color: brown; -->
+   <!-- width: 220px; -->
+   <!-- left:-6px -->
 }
