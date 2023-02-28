@@ -16,26 +16,28 @@ header("Content-type: text/css");
  }
  .form-box{
    width: 380px;
-   height: 580px;
+   height: 630px;
    position: relative;
-   margin: 6% auto;
+   margin: 5% auto;
    background: #fff;
    padding: 5px;
    overflow: hidden; 
  } 
 .btn-box{
    width: 220px;
-    margin: 35px auto;
+   margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
-    border-radius: 30px;
+    box-shadow: 0 0 20px 9px #ff61241f; 
+     border-radius: 30px; 
+     positio: relative;
+     top:30px;
  }
- .toggle-btn{
+ .btn{
     padding: 10px 90px;
     background: transparent;
     border: 0;
     outline: none;
-    position:relative;
+    position:relative; 
    }
  #btn{
     position: absolute;
@@ -69,22 +71,30 @@ header("Content-type: text/css");
     padding: 10px 0;
     margin: 5px 0;
     border-left: 0;
-    border-top: 0;
+    border-top: 0px;
     border-right: 0;
     border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
+ } 
+ #login .input-field{
+   margin: 19px 0;
  }
  .submit-btn{
-    width: 85%;
-    padding: 10px 30px;
+    width: 65%; 
+    padding: 10px 20px;
+    position: relative;
+    left: 50px;
+    background-color: orange;
+    font-weight: bold;
     cursor: pointer;
-    display: block;
-    margin: auto;
-    background: linear-gradient(to right, #ff105f, #ffad06);
-    border: 0;
-    outline: none;
-    border-radius: 40px;
+    border: 0px;
+    border:none;
+
+
+ }
+ #login .submit-btn{
+   top:70px;
  }
  .checkbox{
     margin: 30px 10px 30px 0;
@@ -97,22 +107,31 @@ header("Content-type: text/css");
     position: absolute;
  }
  #register span{
-   top: 268px;
+   top: 272px;
  }
   #user-circle{ 
     position: absolute;
     right: 10px;
     top: 15px;
  }
+ #login #user-circle{
+   top: 25px;
+ }
  #lock{
     position: absolute;
     right: 10px;
     top: 60px;
  }
+ #login #lock{
+   top:100px;
+ }
  #envelope{
     position: absolute;
     right: 10px;
     top: 80px;
+ }
+ #login #envelope{
+   top:30px;
  }
  #lock2{
     position: absolute;
@@ -135,11 +154,11 @@ header("Content-type: text/css");
  }
  p{
    position:relative;
-   top: 15px;
-   left:14px;
+   top: 21px;
+   left:11px;
 }
 #login p{
-   top:40px;
+   top:120px;
 }
 #login span{
    position: absolute;
@@ -156,7 +175,12 @@ a{
    position:absolute;
    font-size:13px;
 }
-
+p#errEmail{
+   top:62px;
+}
+p#errPass{
+   top:122px;
+}
 #errmsg_user{
    top:45px;
 }
@@ -168,6 +192,12 @@ a{
 }
 #errmsg_rePw{
    top:240px;
+}
+.success-msg{
+   color:green;
+   position:absolute;
+   font-size:13px;
+   top: 410px;
 }
    <!-- top: 160px; -->
    <!-- left: 50px; -->

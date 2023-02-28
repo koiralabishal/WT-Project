@@ -1,4 +1,60 @@
+<?php 
+    if (isset($_POST["submit"])) { 
+      $dbHost = 'localhost';
+      $dbName = 'register';
+      $dbUsername = 'root';
+      $dbPassword = '';
+      $conn = mysqli_connect($dbHost, $dbUsername,$dbPassword, $dbName);
+      $userName =  $_POST['username'];
+      $email =   $_POST['email'];
+      $password =   $_POST['password'];
+      $rePassword =   $_POST['re-password'];
+      $passwordHash = md5($password);
+      $errors = array();
+      $sql = "SELECT * FROM user WHERE email = '{$email}'" ;
+      $sql1 = "SELECT * FROM user WHERE username = '{$userName}'" ;
+      $result = mysqli_query($conn, $sql);
+      $result1 = mysqli_query($conn, $sql1);
 
+      if (empty($email)) {
+         $errors['email']= "Email is mandatory.";
+      }
+      elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+         $errors['email'] = "Email is not valid."; 
+      }
+      elseif (mysqli_num_rows($result)>0) {
+         $errors['email'] = "Email is already exist" ; 
+      }
+      
+    
+      if(empty($userName)){
+         $errors['username'] = "Username is mandatory.";
+      } 
+      elseif (mysqli_num_rows($result1)>0) {
+        $errors['username']= "Username is already exist"  ; 
+      }
+
+      if (empty($password)) {
+         $errors['password']  = "Password is mandatory.";   
+      }
+      elseif (strlen($password) < 8 ) {
+         $errors['password']  = "Password must be at least 8 characters.";   
+      }
+      if ($password != $rePassword) {
+         $errors['re-password'] = "Password doesn't match.";
+      }
+
+      if (count($errors)==0){
+         $query = "INSERT INTO user(username,email,password) VALUES('{$userName}', '{$email}', '{$passwordHash}')"; 
+         if (mysqli_query($conn, $query)) {
+               $success_msg = "Hello! $userName, You have registered successfully.";
+         }
+         else {
+            echo "Something is wrong.";
+         }
+      }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,41 +72,38 @@
         <div class="form-box">
            <div class="btn-box">
                <div id="btn"></div>
-               <button type="button" class="toggle-btn" >Register</button>
+               <button type="button" class="btn" >Register</button>
            </div>
-           <div class="social-icons">
-                <img src="fb.png">
-                <img src="gp.png">
-            </div>
-                <form id="register"  method="post" action="validation.php" class="input-group">
+            <!-- <div class="social-icons"> -->
+                <!-- <img src="fb.png"> -->
+                <!-- <img src="gp.png"> -->
+            <!-- </div> -->
+                <form id="register"  method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="input-group">
                 <i class="fas fa-user-circle" id="user-circle"></i>
-                <input type="text"  class="input-field" placeholder="username" name="username" value = "<?php echo $userName;?>"></br>
-                <?php  if (isset($error_userName)) { ?>
-                   <P id="errmsg_user" class = "errmsg" ><?php echo '&#9888' ; echo $error_userName ;?> </p>
+                <input type="text"  class="input-field" placeholder="Username" name="username" value = "<?=(isset($userName))?$userName:''?>"></br>
+                 <?php  if (isset($errors['username'])) { ?>
+                   <P id="errmsg_user" class = "errmsg" ><?php echo '&#9888' ; echo $errors['username'] ;?> </p>
                 <?php } ?>
                 <i class="fas fa-envelope" id="envelope"></i><br>
-                <input type="text"  class="input-field" placeholder="Email" name="email" value = "<?php  echo  $email; ?>"></br>
-                <?php  if (isset($error_email)) { ?>
-                   <P id="errmsg_email" class = "errmsg" ><?php echo '&#9888' ; echo $error_email?> </p>
-                <?php } ?>
-                <?php  if (isset($msg)) { ?>
-                   <P id="errmsg_email" class = "errmsg" ><?php echo '&#9888' ; echo $msg?> </p>
+                <input type="text"  class="input-field" placeholder="Email" name="email" value = "<?=(isset($email))?$email:''?>"></br>
+                <?php  if (isset($errors['email'])) { ?>
+                   <P id="errmsg_email" class = "errmsg" ><?php echo '&#9888' ; echo $errors['email']?> </p>
                 <?php } ?>
                 <i class="fas fa-lock" id="lock2"></i><br>
-                <input type="password"  class="input-field" id="pw" placeholder="password" name="password"></br>
-                <?php  if (isset($error_password)) { ?>
-                   <P id="errmsg_pw" class = "errmsg" ><?php echo '&#9888' ; echo $error_password?> </p>
+                <input type="password"  class="input-field" id="pw" placeholder="Password" name="password" ></br>
+                 <?php  if (isset($errors['password'])) { ?> 
+                   <p id="errmsg_pw" class = "errmsg" ><?php echo '&#9888' ; echo $errors['password']?> </p>
                 <?php } ?>
                 <i class="fas fa-lock" id="lock3"></i><br>
                 <input type="password"  class="input-field" placeholder="Re-password" name="re-password"></br>
-                <?php  if (isset($error_rePassword)) { ?>
-                   <p id="errmsg_rePw" class = "errmsg" ><?php echo '&#9888' ; echo $error_rePassword?> </p>
+                <?php  if (isset($errors['re-password'])) { ?>
+                   <p id="errmsg_rePw" class = "errmsg" ><?php echo '&#9888' ; echo $errors['re-password']?> </p>
                 <?php } ?>
                 <input type="checkbox" class="checkbox" required><span>I agree to the terms & conditions.</span><br>
                 <button type="submit" class="submit-btn" name="submit">Register</button>
-                <p>Already have an account?<a href="login.php">Login now</a></p><br>
+                <p>Already have an account?<a href="index.php">Login now</a></p><br>
                 <?php  if (isset($success_msg)) { ?>
-                   <p><?php echo $success_msg?> </p>
+                   <p class ="success-msg"><?php echo $success_msg?> </p>
                 <?php } ?>
             </form>
             
