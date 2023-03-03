@@ -139,11 +139,9 @@ body{
 }
 
 
-.checkbox{
-   margin: 30px 10px 30px 0;
-   cursor: pointer;
+#register .submit-btn{
+   top:50px;
 }
-
 
 span#eye{
    position:absolute;

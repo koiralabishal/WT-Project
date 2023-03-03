@@ -104,6 +104,7 @@
                <p id="errmsg_pw" class = "errmsg" ><?php echo '&#9888' ; echo $errors['password']?> </p>
             <?php } ?>
 
+            
             <i class="fas fa-lock" id="lock3"></i><br>
 
             <input type="password"  class="input-field" placeholder="Re-password" name="re-password"></br>
@@ -112,9 +113,8 @@
                <p id="errmsg_rePw" class = "errmsg" ><?php echo '&#9888' ; echo $errors['re-password']?> </p>
             <?php } ?>
 
-            <input type="checkbox" class="checkbox" required><span id="terms">I agree to the terms & conditions.</span><br>
 
-            <button type="submit" class="submit-btn" name="submit">Register</button>
+            <button type="submit" class="submit-btn" name="submit" >Register</button>
 
             <p>Already have an account?<a href="login.php">Login now</a></p><br>
 
