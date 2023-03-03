@@ -1,3 +1,8 @@
+<?php
+   header("Content-type: text/css");
+
+?>
+
 
 *{
    margin:0px;
@@ -51,7 +56,6 @@ body{
    position: relative;
    box-shadow: 0 0 20px 9px #ff61241f; 
    border-radius: 30px; 
-   position: relative;
    top:5px;
 }
 
@@ -117,7 +121,7 @@ body{
 }
 
 
-.submit-btn{
+ .submit-btn{
    width: 50%; 
    padding: 10px 20px;
    position: relative;
@@ -125,10 +129,9 @@ body{
    background-color: orange;
    font-weight: bold;
    cursor: pointer;
-   border: 0px;
-   border:none;
-   border-radius: 10px;
-}
+   border: 1px solid orange; 
+   border-radius: 20px; 
+} 
 
 
 #login .submit-btn{
